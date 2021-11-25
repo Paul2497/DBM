@@ -1,0 +1,688 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="DBM API (Application Programming Interface) allows integrators to process and handle disbursement requests to partner institutions.">
+      
+      
+      
+        <meta name="author" content="JPS">
+      
+      
+      <link rel="icon" href="https://resource.altpaynet.com/resources/img/apn_rel_icon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
+    
+    
+      
+        <title>**RESTful Endpoints** - DBM</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1118c9be.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ba0d045b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7C&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:""}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#restful-endpoints" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DBM" class="md-header__button md-logo" aria-label="DBM" data-md-component="logo">
+      
+  <img src="../img/white.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DBM
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              **RESTful Endpoints**<br>
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 10a2 2 0 0 1 2 2 2 2 0 0 1-2 2 2 2 0 0 1-2-2 2 2 0 0 1 2-2m10-3a5 5 0 0 1 5 5 5 5 0 0 1-5 5H7a5 5 0 0 1-5-5 5 5 0 0 1 5-5h10M7 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 3 3 0 0 0-3-3H7z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DBM" class="md-nav__button md-logo" aria-label="DBM" data-md-component="logo">
+      
+  <img src="../img/white.png" alt="logo">
+
+    </a>
+    DBM
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get-disbursement-facilities/" class="md-nav__link">
+        Get Disbursement Facilities
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disburse-money/" class="md-nav__link">
+        Disburse Money
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get-disbursement-status/" class="md-nav__link">
+        Get Disbursement Status
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-reference/" class="md-nav__link">
+        API Reference
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#connect-and-authenticate-to-the-api" class="md-nav__link">
+    Connect and authenticate to the API
+  </a>
+  
+    <nav class="md-nav" aria-label="Connect and authenticate to the API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authorization" class="md-nav__link">
+    Authorization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-samples" class="md-nav__link">
+    Request Samples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responses" class="md-nav__link">
+    Responses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-samples" class="md-nav__link">
+    Response Samples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-invoice" class="md-nav__link">
+    Generate Invoice
+  </a>
+  
+    <nav class="md-nav" aria-label="Generate Invoice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-invoice_1" class="md-nav__link">
+    Generate Invoice
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-invoice-request-body" class="md-nav__link">
+    Generate Invoice Request Body
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#request-samples_1" class="md-nav__link">
+    Request Samples
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responses_1" class="md-nav__link">
+    Responses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response-samples_1" class="md-nav__link">
+    Response Samples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="restful-endpoints"><strong>RESTful Endpoints</strong><br></h1>
+<p>This section describes every endpoint needed to integrate to E-Snapped API.<br></p>
+<h2 id="connect-and-authenticate-to-the-api"><strong>Connect and authenticate to the API</strong><br></h2>
+<p>Connect and authenticate to the API to be able to commence a single transaction.<br></p>
+<div class="highlight"><pre><span></span><code><span class="go">POST/esws/api/connect</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Notes</p>
+<p><ol>
+  <li>Issued authorization token is valid within 60 seconds upon response.</li>
+  <li>Integrator must authenticate first before sending a transaction.</li>
+</ol></p>
+</div>
+<h3 id="authorization"><strong>Authorization</strong><br></h3>
+<p><img alt="Authorization Header Parameters!" src="../img/authorization-header-parameters.png" /><br><br></p>
+<h3 id="request-samples"><strong>Request Samples</strong><br></h3>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">cURL</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="go">curl -X POST &quot;http://test.ws.e-snapped.com/esws/api/connect&quot; </span>
+<span class="go">-H &quot;accept: application/json&quot; </span>
+<span class="go">-H &quot;Key: test.esnapped.admin&quot; </span>
+<span class="go">-H &quot;Secret: Qwerty1#$&quot; </span>
+<span class="go">-H &quot;Content-Type: application/json&quot;</span>
+</code></pre></div>
+</div>
+</div>
+<h3 id="responses"><strong>Responses</strong><br></h3>
+<details class="success"><summary>200 Successful Request</summary><p><img alt="Authorization Response Parameters!" src="../img/auth-successful-response-parameters.png" /><br></p>
+</details>
+<details class="fail"><summary>400 Result of missing/invalid header parameters</summary><p><img alt="Authorization 400 Response Parameters!" src="../img/auth-erroneous-response-parameters.png" /><br></p>
+</details>
+<details class="fail"><summary>406 Result of incorrect authentication credentials. Please provide correct key and secret values</summary><p><img alt="Authorization 406 Response Parameters!" src="../img/auth-erroneous-response-parameters.png" /><br></p>
+</details>
+<h3 id="response-samples"><strong>Response Samples</strong><br></h3>
+<div class="tabbed-set" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">200</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;OK.01&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Authentication Success&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-09-11 16:11:13.735&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBbHRQYXlOZXQgQ29ycCIsImlhdCI6MTUwMzY0MTQ0NiwiZXNrIjoiaUJHSXZLemx6N21EcXNEa1pLVmpiZyUzRCUzRC5lc3BqTEpTcWxDJTJGNGxuJTJGM2t2aSUyQmJGQnclM0QlM0QiLCJlc3AiOiIxdVIxQldGbnpiV2l4Zm1ITm92eUZ3JTNEJTNELmVzN3hjbk04cUJkdDF6NThEMTA1TTlKZyUzRCUzRCJ9.eF28MlgCtcPsK7rgqMD8xoaHysPb0cxgkEGwnOwoKh1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">400</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;ER.01&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;HTTP Request Error&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-09-11 16:11:13.735&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;Missing request header ‘secret’ of type String&quot;</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">406</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;ER.04&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Validation Error&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-09-11 16:11:13.735&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;Invalid credentials&quot;</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<p><br><br></p>
+<h2 id="generate-invoice"><strong>Generate Invoice</strong><br></h2>
+<p>Create invoice to the system that can be sent to the client through email.<br></p>
+<div class="highlight"><pre><span></span><code><span class="go">POST/esws/api/invoice/new</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Notes</p>
+<p><ol>
+  <li>All decimal type fields must have 2 decimal places as default (e.g. 1.00 instead of 1 to avoid errors)</li>
+  <li>All calculation results must be rounded up to 2 decimal places.</li>
+  <li>If the tax rate has a value of exactly 0.00, then invoice tax details will not be shown.</li>
+</ol></p>
+</div>
+<h3 id="generate-invoice_1"><strong>Generate Invoice</strong><br></h3>
+<p><img alt="Generate Invoice Header Parameters!" src="../img/generate-invoice-header-parameters.png" /><br><br></p>
+<h3 id="generate-invoice-request-body"><strong>Generate Invoice Request Body</strong></h3>
+<p><img alt="Generate Invoice Body Parameters!" src="../img/generate-invoice-body-parameters.png" /><br><br></p>
+<h3 id="request-samples_1"><strong>Request Samples</strong><br></h3>
+<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">cURL</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="go">curl -X POST &quot;http://test.ws.e-snapped.com/esws/api/invoice/new?s=true&quot; </span>
+<span class="go">-H &quot;accept: application/json&quot; </span>
+<span class="go">-H &quot;Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBbHRQYXlOZXQgQ29ycCIsImlhdCI6MTU2NTIyOTM4OSwiZXNrIjoiSVNqYUVRTm9aWEpzenM4Z2lpciUyQmRBJTNEJTNELmVzRXFNd2g5Zk85a0xER0dMc2lraTJzUSUzRCUzRCIsImVzcCI6Ik56UTBOcWxUeks4cmxJblRxbGowWnclM0QlM0QuZXNpRTJkY2NFenE0OGxqNGZ1MGRvRmNRJTNEJTNEIiwiZXhwIjoxNTY1MjMxMTg5fQ.YImubUouh47RZvtEjRJN3g_8wpgSLUhzsrtr_wbV4fg&quot; </span>
+<span class="go">-H &quot;Content-Type: application/json&quot; </span>
+<span class="go">-d &quot;{ </span>
+<span class="go">      &quot;accountFName&quot;: &quot;Abel&quot;, </span>
+<span class="go">      &quot;accountLName&quot;: &quot;Maclead&quot;, </span>
+<span class="go">      &quot;companyName&quot;: &quot;AltPayNet Corp.&quot;, </span>
+<span class="go">      &quot;address1&quot;: &quot;#88&quot;, </span>
+<span class="go">      &quot;address2&quot;: &quot;5 Boston Ave&quot;&quot;, </span>
+<span class="go">      &quot;cityMunicipality&quot;: &quot;Philadelphia&quot;, </span>
+<span class="go">      &quot;zip&quot;: 19132, </span>
+<span class="go">      &quot;stateProvince&quot;: &quot;PA&quot;, </span>
+<span class="go">      &quot;countryCode&quot;: &quot;US&quot;, </span>
+<span class="go">      &quot;email&quot;: &quot;amaclead@domain.com&quot;, </span>
+<span class="go">      &quot;phone&quot;: &quot;+99 999 999-9999&quot;, </span>
+<span class="go">      &quot;mobile&quot;: &quot;+99 999 999-9999&quot;, </span>
+<span class="go">      &quot;items&quot;: [ </span>
+<span class="go">        { </span>
+<span class="go">          &quot;order&quot;: 1, </span>
+<span class="go">          &quot;item&quot;: &quot;Sample item 1&quot;, </span>
+<span class="go">          &quot;quantity&quot;: 1, </span>
+<span class="go">          &quot;amount&quot;: 1000.99, </span>
+<span class="go">          &quot;subTotal&quot;: 1000.99 </span>
+<span class="go">        } </span>
+<span class="go">      ], </span>
+<span class="go">      &quot;totalAmount&quot;: 1000.99, </span>
+<span class="go">      &quot;taxRate&quot;: 12.00, </span>
+<span class="go">      &quot;taxDue&quot;: 120.12, </span>
+<span class="go">      &quot;totalAmountDue&quot;: 1121.11, </span>
+<span class="go">      &quot;dueDate&quot;: &quot;2020-01-01&quot;, </span>
+<span class="go">      &quot;currency&quot;: &quot;USD&quot;, </span>
+<span class="go">      &quot;notes&quot;: &quot;Testing this invoice&quot;, </span>
+<span class="go">      &quot;timezone&quot;: &quot;+0800&quot;, </span>
+<span class="go">      &quot;merchantReference&quot;: &quot;INV-100001_TEST&quot;</span>
+<span class="go">    }&quot;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Payload</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;accountFName&quot;</span><span class="p">:</span><span class="s2">&quot;Abel&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;accountLName&quot;</span><span class="p">:</span><span class="s2">&quot;Maclead&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;companyName&quot;</span><span class="p">:</span><span class="s2">&quot;AltPayNet Corp.&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;address1&quot;</span><span class="p">:</span><span class="s2">&quot;#88&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;address2&quot;</span><span class="p">:</span><span class="s2">&quot;5 Boston Ave&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;cityMunicipality&quot;</span><span class="p">:</span><span class="s2">&quot;Philadelphia&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;zip&quot;</span><span class="p">:</span><span class="mi">19132</span><span class="p">,</span>
+  <span class="nt">&quot;stateProvince&quot;</span><span class="p">:</span><span class="s2">&quot;PA&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;countryCode&quot;</span><span class="p">:</span><span class="s2">&quot;US&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;amaclead@domain.com&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;phone&quot;</span><span class="p">:</span><span class="s2">&quot;+99 999 999-9999&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;mobile&quot;</span><span class="p">:</span><span class="s2">&quot;+99 999 999-9999&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;items&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;order&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&quot;item&quot;</span><span class="p">:</span><span class="s2">&quot;Sample item 1&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="mf">1000.99</span><span class="p">,</span>
+        <span class="nt">&quot;subTotal&quot;</span><span class="p">:</span><span class="mf">1000.99</span>
+      <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;totalAmount&quot;</span><span class="p">:</span><span class="mf">1000.99</span><span class="p">,</span>
+  <span class="nt">&quot;taxRate&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span>
+  <span class="nt">&quot;taxDue&quot;</span><span class="p">:</span><span class="mf">120.12</span><span class="p">,</span>
+  <span class="nt">&quot;totalAmountDue&quot;</span><span class="p">:</span><span class="mf">1121.11</span><span class="p">,</span>
+  <span class="nt">&quot;dueDate&quot;</span><span class="p">:</span><span class="s2">&quot;2020-01-01&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;currency&quot;</span><span class="p">:</span><span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;notes&quot;</span><span class="p">:</span><span class="s2">&quot;Testing this invoice&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;timezone&quot;</span><span class="p">:</span><span class="s2">&quot;+0800&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;merchantReference&quot;</span><span class="p">:</span><span class="s2">&quot;INV-100001_TEST&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<h3 id="responses_1"><strong>Responses</strong><br></h3>
+<details class="success"><summary>200 Successful Request</summary><p><img alt="Generate Invoice Response Parameters!" src="../img/generate-invoice-successful-response-parameters.png" /><br></p>
+</details>
+<details class="fail"><summary>400 Result of missing/invalid URL or header parameter/s</summary><p><img alt="Generate Invoice Response Parameters!" src="../img/generate-invoice-erroneous-response-parameters.png" /><br></p>
+</details>
+<details class="fail"><summary>401 Result of invalid authorization token. Token must not be null, not modified, and not expired.</summary><p><img alt="Generate Invoice Response Parameters!" src="../img/generate-invoice-erroneous-response-parameters.png" /><br></p>
+</details>
+<details class="fail"><summary>406 Result of missing/invalid request body.</summary><p><img alt="Generate Invoice Response Parameters!" src="../img/generate-invoice-erroneous-response-parameters.png" /><br></p>
+</details>
+<h3 id="response-samples_1"><strong>Response Samples</strong><br></h3>
+<div class="tabbed-set" data-tabs="4:4"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">200</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;OK.06.00.011&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Invoice generated successfully&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-09-11 16:11:13.735&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">400</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;ER.01&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;HTTP Request Error&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-09-11 16:11:13.735&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;Missing request header ‘Authorization’ of type String&quot;</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><label for="__tabbed_4_3">401</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;ER.02&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Authentication Error&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-09-11 16:11:13.735&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;Invalid authorization token. Make sure that the token has value and not altered/modified.&quot;</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_4_4" name="__tabbed_4" type="radio" /><label for="__tabbed_4_4">406</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;ER.04&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Validation Error&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-09-11 16:11:13.735&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;accountFName: This field is required.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;accountLName: Invalid field format. Must be composed of letters, spaces and dots only.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;companyName: This field is required.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;address1: This field is required.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;address2: This field is required.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cityMunicipality: This field is required.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;stateProvince: This field is required.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;countryCode: This field is required.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;zip: Invalid field format. Minimum of 7 and maximum of 19 characters is allowed.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;totalAmount: This field is required.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;email: Invalid field format. Must be formatted as local-part@domain.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;mobile: Either this or phone field is required.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;phone: Either this or mobile field is required&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dueDate: This field is required.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;currency: Invalid field format. Must be included in ISO 4217 codes.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;taxRate: Invalid or missing field value. Field ‘taxDue’ is required.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;taxDue: Invalid or missing field value. Field &#39;totalAmount&#39;, &#39;taxRate&#39; is required and result must be calculated correctly.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;totalAmountDue: Invalid or missing field value. Field &#39;totalAmount&#39; is required and result must be calculated correctly.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;totalAmount: Invalid or missing field value. Field ‘items’ is required and result must be calculated correctly.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;timezone: Invalid field format. Must be formatted from -1100 to +1400.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;items: This field is required.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;items[0].order: Invalid field range. Must be between 0 to 999999999 only.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;items[0].quantity: Invalid field range. Must be between 0 to 999999999 only.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;items[0].amount: Invalid field value. Must be greater than 0.00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;items[0].subTotal: Invalid or missing field value. Field ‘quantity’, ‘amount’ is required and must be calculated correctly.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;merchantReference: Invalid field format. Must be composed of letters, numbers, dot, dashes and hashtags only.&quot;</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2021 DBM v1.1
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.2b46852b.min.js"></script>
+      
+    
+  </body>
+</html>
