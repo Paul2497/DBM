@@ -18,7 +18,7 @@
     
     
       
-        <title>Get Disbursement Facilities - DBM</title>
+        <title>Cashfree - DBM</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#get-disbursement-facilities" class="md-skip">
+        <a href="#disburse-money" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Get Disbursement Facilities
+              Cashfree
             
           </span>
         </div>
@@ -218,72 +218,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Get Disbursement Facilities
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../get-disbursement-facilities/" class="md-nav__link">
         Get Disbursement Facilities
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#facility" class="md-nav__link">
-    Facility
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#request-samples" class="md-nav__link">
-    Request Samples
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#responses" class="md-nav__link">
-    Responses
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#response-samples" class="md-nav__link">
-    Response Samples
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -294,12 +233,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       <label class="md-nav__link" for="__nav_3">
         Disburse Money
@@ -339,11 +280,72 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../disburse-money-cashfree/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Cashfree
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Cashfree
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#disburse-to-cashfree" class="md-nav__link">
+    Disburse to Cashfree
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-samples" class="md-nav__link">
+    Request Samples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#responses" class="md-nav__link">
+    Responses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response-samples" class="md-nav__link">
+    Response Samples
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -410,8 +412,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#facility" class="md-nav__link">
-    Facility
+  <a href="#disburse-to-cashfree" class="md-nav__link">
+    Disburse to Cashfree
   </a>
   
 </li>
@@ -450,44 +452,96 @@
               
                 
                 
-                <h1 id="get-disbursement-facilities"><strong>Get Disbursement Facilities</strong><br></h1>
-<p>An endpoint to get disbursement facilities available for disbursement.</p>
-<p>To get disbursement facilities, send the following request header parameter via GET.<br></p>
-<div class="highlight"><pre><span></span><code><span class="go">GET/facility?expirable=true</span>
+                <h1 id="disburse-money"><strong>Disburse Money</strong><br></h1>
+<p>Depending on the disbursement facility to be used, to disburse money, send the request headers and body parameters via POST.<br></p>
+<div class="highlight"><pre><span></span><code><span class="go">POST/disburse</span>
 </code></pre></div>
-<h3 id="facility"><strong>Facility</strong><br></h3>
-<p><img alt="Get Disbursement Facilities Header Parameters!" src="../img/get-disbursement-facilities-header-parameters.png" /><br><br></p>
+<h3 id="disburse-to-cashfree"><strong>Disburse to Cashfree</strong><br></h3>
+<p><img alt="Post Disburse Money Header Parameters!" src="../img/post-disburse-header-parameters.png" /><br><br></p>
+<p><img alt="Disburse Money Body Parameters!" src="../img/disburse-money-body-parameters.png" /><br><br></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+   <span class="nt">&quot;data&quot;</span><span class="p">:{</span>
+      <span class="nt">&quot;merchantReference&quot;</span><span class="p">:</span><span class="s2">&quot;DBMTEST1512210001&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;facility&quot;</span><span class="p">:</span><span class="s2">&quot;{jwtString}&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;items&quot;</span><span class="p">:[</span>
+         <span class="p">{</span>
+            <span class="nt">&quot;reference&quot;</span><span class="p">:</span><span class="s2">&quot;{accountNumber}&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="s2">&quot;1.00&quot;</span>
+         <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;customParameters&quot;</span><span class="p">:[</span>
+         <span class="p">{</span>
+            <span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;amaclead@example.com&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;ifsc&quot;</span><span class="p">:</span><span class="s2">&quot;{code}&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;{customerName}&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;phone&quot;</span><span class="p">:</span><span class="s2">&quot;{customerPhone}&quot;</span>
+         <span class="p">}</span>
+      <span class="p">]</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>See <a href="../api-reference/#payloadDataBody">API Reference &gt; Transaction Body Payload Data</a> for a more guided requirement.<br></p>
 <h3 id="request-samples"><strong>Request Samples</strong><br></h3>
-<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">cURL</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Payload</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;data&quot;</span><span class="p">:{</span>
+      <span class="nt">&quot;merchantReference&quot;</span><span class="p">:</span><span class="s2">&quot;DBMTEST1512210001&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;facility&quot;</span><span class="p">:</span><span class="s2">&quot;{jwtString}&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;items&quot;</span><span class="p">:[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;reference&quot;</span><span class="p">:</span><span class="s2">&quot;{accountNumber}&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="s2">&quot;1.00&quot;</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;customParameters&quot;</span><span class="p">:[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;amaclead@example.com&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;ifsc&quot;</span><span class="p">:</span><span class="s2">&quot;{code}&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;{customerName}&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;phone&quot;</span><span class="p">:</span><span class="s2">&quot;{customerPhone}&quot;</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">cURL</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="go">curl </span>
-<span class="go">-X GET &quot;https://test-api-dbm.tlpe.io/facility?expirable=true&quot; \</span>
+<span class="go">-X POST &quot;https://test-api-dbm.tlpe.io/disburse&quot; \</span>
 <span class="go">-H &quot;Content-Type: application/json&quot; \</span>
 <span class="go">-H &quot;Authorization: {integratorToken}&quot; \</span>
+<span class="go">-d &quot;{</span>
+<span class="go">      &quot;payload&quot;: &quot;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.ew0KICAgImRhdGEiOnsNCiAgICAgICJtZXJjaGFudFJlZmVyZW5jZSI6IlNNUEwxMTExIiwNCiAgICAgICJmYWNpbGl0eSI6ImV5SjBlWEFpT2lKS1YxUWlMQ0poYkdjaU9pSklVekkxTmlKOS5leUpwYzNNaU9pSkVRazBpTENKemRXSWlPaUpFYVhOaWRYSnpaVzFsYm5RZ0tFUkNUU2tnUVhWMGFHVnVkR2xqWVhScGIyNGlMQ0poZFdRaU9pSkVhWE5pZFhKelpXMWxiblFnS0VSQ1RTa2lMQ0psZUhBaU9qRTJNemszTVRNME5qQXNJbWxoZENJNk1UWXpPVGN4TVRZMk1Dd2lhblJwSWpvaVpURXlaR0psWWpRdFpUUm1OaTAwTTJZeUxXRXlZVFF0WVRNME56VTJaVE14TmprM0lpd2ljR2xrSWpvaVlUZ3lORGhqWkdJdE1Ua3lPQzAwTURnNExUaGhZVFF0TW1Ka09XWTJNMk5tTXpKbUluMC5tS1U2b05NbFNtdFhENkhhY0s0MjJ4LXFUc1RGbUljOG5Sd0FIQWhyMWs0IiwNCiAgICAgICJpdGVtcyI6Ww0KICAgICAgICAgew0KICAgICAgICAgICAgInJlZmVyZW5jZSI6IjAyNjI5MTgwMDAwMTE5MSIsDQogICAgICAgICAgICAiYW1vdW50IjoiMS4wMCINCiAgICAgICAgIH0NCiAgICAgIF0sDQogICAgICAiY3VzdG9tUGFyYW1ldGVycyI6Ww0KICAgICAgICAgew0KICAgICAgICAgICAgImVtYWlsIjoiYXBuLnBoaWxzaWxsYUBnbWFpbC5jb20iLA0KICAgICAgICAgICAgImlmc2MiOiJZRVNCMDAwMDI2MiIsDQogICAgICAgICAgICAibmFtZSI6IlBoaWwiLA0KICAgICAgICAgICAgInBob25lIjoiMDkyMzQ1NjgyNzEiDQogICAgICAgICB9DQogICAgICBdDQogICB9DQp9.h3vcN1VhiC-PPTLjRNiDkGwHXw_v8QoYfIH6TUkqTUo&quot;</span>
+<span class="go">    }</span>
 </code></pre></div>
 </div>
 </div>
 <h3 id="responses"><strong>Responses</strong><br></h3>
-<details class="success"><summary>200 Successful Response</summary><p><img alt="Get Disbursement Facilities Response Parameters!" src="../img/get-disbursement-facilities-response-parameters.png" /><br></p>
+<details class="success"><summary>200 Successful Response</summary><p><img alt="Disburse Money Successful Response Parameters!" src="../img/post-disburse-successful-response-parameters.png" /><br></p>
+</details>
+<details class="fail"><summary>400 Erroneous Response</summary><p><img alt="Disburse Money Erroneous Response Parameters!" src="../img/post-disburse-erroneous-response-parameters.png" /><br></p>
 </details>
 <h3 id="response-samples"><strong>Response Samples</strong><br></h3>
-<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">200</label><div class="tabbed-content">
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">200</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-06-13 06:52:37 +0000&quot;</span><span class="p">,</span>
   <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
   <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;OK&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/facility&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;facility&quot;</span><span class="p">:</span> <span class="s2">&quot;{jwtString}&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;{facilityName}&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;imageUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;{ImageUrl}&quot;</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;facility&quot;</span><span class="p">:</span> <span class="s2">&quot;{jwtString}&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;{facilityName}&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;imageUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;{ImageUrl}&quot;</span>
-    <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/disburse&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;transactionReference&quot;</span><span class="p">:</span> <span class="s2">&quot;210613065229SJF9939&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;statusCode&quot;</span><span class="p">:</span> <span class="s2">&quot;OK.00.10&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;statusDescription&quot;</span><span class="p">:</span> <span class="s2">&quot;Disbursement request successful&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">401</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2021-06-13 07:11:19 +0000&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">401</span><span class="p">,</span>
+  <span class="nt">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;Unauthorized&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;/disburse&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
 </div>
@@ -516,7 +570,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction" rel="prev">
+        <a href="../disburse-money-nationlink/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Nationlink" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -525,20 +579,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Introduction
+              Nationlink
             </div>
           </div>
         </a>
       
       
         
-        <a href="../disburse-money-gcash/" class="md-footer__link md-footer__link--next" aria-label="Next: Gcash" rel="next">
+        <a href="../get-disbursement-status/" class="md-footer__link md-footer__link--next" aria-label="Next: Get Disbursement Status" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Gcash
+              Get Disbursement Status
             </div>
           </div>
           <div class="md-footer__button md-icon">

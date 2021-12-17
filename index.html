@@ -281,10 +281,61 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="disburse-money/" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
         Disburse Money
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Disburse Money" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Disburse Money
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="disburse-money-gcash/" class="md-nav__link">
+        Gcash
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="disburse-money-nationlink/" class="md-nav__link">
+        Nationlink
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="disburse-money-cashfree/" class="md-nav__link">
+        Cashfree
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -397,6 +448,11 @@
   <tr>
     <td>Authorization</td>
     <td>Unique identifier of integrator</td>
+    <td>String</td>
+  </tr>
+  <tr>
+    <td>Secret</td>
+    <td>Issued key used for signing the payload data to create a secure token</td>
     <td>String</td>
   </tr>
 </table>

@@ -234,10 +234,61 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../disburse-money/" class="md-nav__link">
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
         Disburse Money
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Disburse Money" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Disburse Money
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disburse-money-gcash/" class="md-nav__link">
+        Gcash
       </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disburse-money-nationlink/" class="md-nav__link">
+        Nationlink
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../disburse-money-cashfree/" class="md-nav__link">
+        Cashfree
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -305,6 +356,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#securityauthentication" class="md-nav__link">
+    Security/Authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transaction-payload-data" class="md-nav__link">
+    Transaction Payload Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#response-messages" class="md-nav__link">
     Response Messages
   </a>
@@ -359,6 +424,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#securityauthentication" class="md-nav__link">
+    Security/Authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transaction-payload-data" class="md-nav__link">
+    Transaction Payload Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#response-messages" class="md-nav__link">
     Response Messages
   </a>
@@ -401,6 +480,66 @@
   <tr>
     <td>LIVE</td>
     <td>https://api-dbm.tlpe.io</td>
+  </tr>
+</table>
+
+<h3 id="securityauthentication"><strong>Security/Authentication</strong><br></h3>
+<p>All requests are authenticated against an Authorization header with an access token and IP whitelisting.</p>
+<h3 id="transaction-payload-data"><div id="payloadDataBody"><strong>Transaction Payload Data</strong></div><br></h3>
+<table>
+  <tr>
+    <th>Parameter Name</th>
+    <th>Required?</th>
+    <th>Description</th>
+    <th>Format</th>
+  </tr>
+  <tr>
+    <td>merchantReference</td>
+    <td>Required</td>
+    <td>Any issued merchant reference id for reference.</td>
+    <td>Alphanumeric</td>
+  </tr>
+  <tr>
+    <td>facility</td>
+    <td>Required</td>
+    <td>Generated token from /facility endpoint</td>
+    <td>Alphanumeric</td>
+  </tr>
+  <tr>
+    <td>reference</td>
+    <td>Required</td>
+    <td>Identifier of the receiver</td>
+    <td>Alphanumeric</td>
+  </tr>
+  <tr>
+    <td>amount</td>
+    <td>Required</td>
+    <td>Amount to disburse</td>
+    <td>Decimal number</td>
+  </tr>
+  <tr>
+    <td>email</td>
+    <td>Required</td>
+    <td>Customer's email address.</td>
+    <td>Alphanumeric</td>
+  </tr>
+  <tr>
+    <td>ifsc</td>
+    <td>Required</td>
+    <td>Refers to Indian Financial System Code, which is an eleven character code assigned by RBI to identify every bank branches uniquely</td>
+    <td>Alphanumeric</td>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>Required</td>
+    <td>Customer's name</td>
+    <td>Alphanumeric</td>
+  </tr>
+  <tr>
+    <td>phone</td>
+    <td>Required</td>
+    <td>Customer's phone number</td>
+    <td>Alphanumeric</td>
   </tr>
 </table>
 
